@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define NUMBER_OF_CITIES 2
+#define NUMBER_OF_CITIES 30
 
 char city[NUMBER_OF_CITIES],distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES];
 int a,b,c;
@@ -33,6 +33,15 @@ void distanceManagement(char city[NUMBER_OF_CITIES],int distance[NUMBER_OF_CITIE
             }
         }
                 printf("\n\n");
+
+        for(b=0;b<NUMBER_OF_CITIES;b++){
+                for(c=0;c<NUMBER_OF_CITIES;c++){
+
+                    printf(" %09d ",distance[b][c]);
+                }
+                printf("\n\n");
+
+            }
 
 
 }
