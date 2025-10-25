@@ -4,11 +4,13 @@
 
 char city[NUMBER_OF_CITIES];
 int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],vehicle[][5];
-int a,b,c,d,e;
+int a,b,c,d,e,f,g,h;
+float weight;
 
 void cityManagement(char city[NUMBER_OF_CITIES]);
 void distanceManagement(char city[NUMBER_OF_CITIES],int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES]);
 void vehicleManagement(int vehicle[][5]);
+void deliveryRequestHandling(int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],int vehicle[][5],float weight);
 
 void cityManagement(char city[NUMBER_OF_CITIES]){
 
@@ -65,6 +67,39 @@ void vehicleManagement(int vehicle[][5]){
 }
 
 
+ void deliveryRequestHandling(int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],int vehicle[][5],float weight){
+
+
+        printf("Enter your source city index: ");
+        scanf("%d",&f);
+        printf("Enter your destination city index: ");
+        scanf("%d",&g);
+        printf("Distance: %d \n",distance[f][g]);
+        printf("You want pass weight: ");
+        scanf("%f",&weight);
+        printf("You want vehicle type: ");
+        scanf("%d",&vehicle[h][0]);
+
+
+        if(weight<=1000&&vehicle[h][0]==1&&f!=g){
+            printf("Valid\n");
+
+        }else if(weight<=5000&&vehicle[h][0]==1||vehicle[h][0]==2&&f!=g){
+            printf("Valid\n");
+
+        }else if(weight<=10000&&vehicle[h][0]==1||vehicle[h][0]==2||vehicle[h][0]==3&&f!=g){
+            printf("Valid\n");
+
+        }else{
+            printf("Invalid\n");
+
+        }
+    printf("\n\n\n\n");
+}
+
+
+
+
 
 
 
@@ -104,6 +139,10 @@ int main()
     printf("Van=1,Truck=2,Lorry=3\n\n");
     printf("   Type   kg      LKR   km/h   km/l\n");
     vehicleManagement(vehicle);
+
+    printf("4.Delivery Request Handling\n\n");
+    deliveryRequestHandling(distance,vehicle,weight);
+
 
 
 
