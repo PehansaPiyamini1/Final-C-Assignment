@@ -5,7 +5,7 @@
 
 char city[NUMBER_OF_CITIES];
 int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],vehicle[][5];
-int a,b,c,d,e,f,g,h,S,E,D,i,R,time;
+int a,b,c,d,e,f,g,h,S,E,D,i,R,time,fuelUsed;
 float weight,F,W,cost;
 
 void cityManagement(char city[NUMBER_OF_CITIES]);
@@ -138,6 +138,10 @@ void calculation(int S,int E,float F,int distance[NUMBER_OF_CITIES][NUMBER_OF_CI
 
     E = vehicle[h][4];
     printf("*Efficiency       = %d (km/l)\n",E);
+
+    fuelUsed = D/E;
+    printf("c.FuelUsed        = %d L\n\n",fuelUsed);
+
 
 
 
