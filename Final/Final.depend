@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1761404512 source:c:\users\admin\desktop\final c assignment\final c assignment\final-c-assignment\final\main.c
+1761405787 source:c:\users\admin\desktop\final c assignment\final c assignment\final-c-assignment\final\main.c
 	<stdio.h>
 	<stdlib.h>
+	<math.h>
 

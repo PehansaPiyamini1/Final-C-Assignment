@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define NUMBER_OF_CITIES 30
 
 char city[NUMBER_OF_CITIES];
 int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],vehicle[][5];
-int a,b,c,d,e,f,g,h;
-float weight;
+int a,b,c,d,e,f,g,h,S,E,D,i,R;
+float weight,F,W,cost;
 
 void cityManagement(char city[NUMBER_OF_CITIES]);
 void distanceManagement(char city[NUMBER_OF_CITIES],int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES]);
 void vehicleManagement(int vehicle[][5]);
 void deliveryRequestHandling(int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],int vehicle[][5],float weight);
+void calculation(int S,int E,float F,int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],int vehicle[][5],float weight);
+
 
 void cityManagement(char city[NUMBER_OF_CITIES]){
 
@@ -98,6 +101,40 @@ void vehicleManagement(int vehicle[][5]){
 }
 
 
+void calculation(int S,int E,float F,int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],int vehicle[][5],float weight){
+
+     if(vehicle[h][0]==1){
+            h=0;
+
+        }else if(vehicle[h][0]==2){
+            h=1;
+
+        }else if(vehicle[h][0]==3){
+            h=2;
+
+        }else{
+            h=3;
+        }
+
+
+
+    D = distance[f][g];
+    printf("*Distance         = %d km\n",D);
+
+    i=f;
+    R = vehicle[h][2];
+    printf("*Rate per km      = %d km\n",R);
+
+    W = weight;
+
+    cost = D*R*(1+W*(1/10000));
+    printf("a.Delivery Cost   = %.2f LKR\n\n",cost);
+
+
+}
+
+
+
 
 
 
@@ -142,6 +179,11 @@ int main()
 
     printf("4.Delivery Request Handling\n\n");
     deliveryRequestHandling(distance,vehicle,weight);
+
+    printf("5.Cost,Time,and Fuel Calculations\n\n");
+    calculation(S,E,F,distance,vehicle,weight);
+
+
 
 
 
