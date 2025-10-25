@@ -3,6 +3,18 @@
 #define NUMBER_OF_CITIES 30
 
 char city[NUMBER_OF_CITIES];
+int a;
+
+void cityManagement(char city[NUMBER_OF_CITIES]);
+
+void cityManagement(char city[NUMBER_OF_CITIES]){
+
+        for(a=0;a<NUMBER_OF_CITIES;a++){
+            printf("%c    ",city[a]);
+        }
+        printf("\n\n");
+
+}
 
 
 int main()
@@ -19,6 +31,7 @@ int main()
     printf("Colombo=A        Kandy=B        Galle=C         Jaffna=D         Anuradhapura=E\nPolonnaruwa=F    Kurunagala=G   Rathnapura=H    Trincomalee=I    Batticaloa=J\nMatara=K         Badulla=L      NuwaraEliya=M   Hambanthota=N    Kaluthara=O\nNegambo=P        Puttalam=Q     Chilaw=R        Vavuniya=S       Ampara=T\nMonaragala=U     Kegalle=V      Gampaha=W       Dehiwala=X       Moratuwa=Y\n");
     printf("Maharagama=Z     Wattala=a      Beruwala=b      Panadura=d       Katunayaka=e\n\n");
 
+    cityManagement(city);
 
     return 0;
 }
