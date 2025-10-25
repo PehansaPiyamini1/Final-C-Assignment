@@ -5,7 +5,7 @@
 
 char city[NUMBER_OF_CITIES];
 int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],vehicle[][5];
-int a,b,c,d,e,f,g,h,S,E,D,i,R;
+int a,b,c,d,e,f,g,h,S,E,D,i,R,time;
 float weight,F,W,cost;
 
 void cityManagement(char city[NUMBER_OF_CITIES]);
@@ -129,6 +129,13 @@ void calculation(int S,int E,float F,int distance[NUMBER_OF_CITIES][NUMBER_OF_CI
 
     cost = D*R*(1+W*(1/10000));
     printf("a.Delivery Cost   = %.2f LKR\n\n",cost);
+
+    S = vehicle[h][3];
+    printf("*Vehicle Speed    = %d (km/h)\n",S);
+
+    time = D/S;
+    printf("b.Time            = %d hours\n\n",time);
+
 
 
 }
