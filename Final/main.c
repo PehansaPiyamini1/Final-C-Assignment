@@ -6,7 +6,7 @@
 char city[NUMBER_OF_CITIES];
 int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],vehicle[][5];
 int a,b,c,d,e,f,g,h,S,E,D,i,R,time,fuelUsed,fuelPrice;
-float weight,F,W,cost,FUEL_COST,totalCost;
+float weight,F,W,cost,FUEL_COST,totalCost,profit;
 
 void cityManagement(char city[NUMBER_OF_CITIES]);
 void distanceManagement(char city[NUMBER_OF_CITIES],int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES]);
@@ -151,6 +151,8 @@ void calculation(int S,int E,float F,int distance[NUMBER_OF_CITIES][NUMBER_OF_CI
     totalCost = cost + FUEL_COST;
     printf("e.Total Cost      = %.2f LKR\n\n",totalCost);
 
+    profit = cost*0.25;
+    printf("f.Profit          = %.2f LKR\n\n",profit);
 
 
 
