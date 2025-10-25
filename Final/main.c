@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #define NUMBER_OF_CITIES 30
 
-char city[NUMBER_OF_CITIES],distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES];
-int a,b,c;
+char city[NUMBER_OF_CITIES];
+int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],vehicle[][5];
+int a,b,c,d,e;
 
 void cityManagement(char city[NUMBER_OF_CITIES]);
 void distanceManagement(char city[NUMBER_OF_CITIES],int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES]);
+void vehicleManagement(int vehicle[][5]);
 
 void cityManagement(char city[NUMBER_OF_CITIES]){
 
@@ -48,6 +50,25 @@ void distanceManagement(char city[NUMBER_OF_CITIES],int distance[NUMBER_OF_CITIE
 
 
 
+void vehicleManagement(int vehicle[][5]){
+    for(d=0;d<3;d++){
+        for(e=0;e<5;e++){
+            printf("%6d ",vehicle[d][e]);
+
+        }
+        printf("\n");
+
+    }
+
+    printf("\n\n\n");
+
+}
+
+
+
+
+
+
 
 
 
@@ -61,7 +82,13 @@ int main()
     char city[NUMBER_OF_CITIES]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T',
     'U','V','W','X','Y','Z','a','b','d','e'};
 
-    int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES],record;
+    int distance[NUMBER_OF_CITIES][NUMBER_OF_CITIES];
+
+    int Van=1,Truck=2,Lorry=3;
+    int vehicle[][5]={1,1000,30,60,12,2,5000,40,50,6,3,10000,80,45,4};
+
+
+
 
     printf("1.City Management\n\n");
     printf("Colombo=A        Kandy=B        Galle=C         Jaffna=D         Anuradhapura=E\nPolonnaruwa=F    Kurunagala=G   Rathnapura=H    Trincomalee=I    Batticaloa=J\nMatara=K         Badulla=L      NuwaraEliya=M   Hambanthota=N    Kaluthara=O\nNegambo=P        Puttalam=Q     Chilaw=R        Vavuniya=S       Ampara=T\nMonaragala=U     Kegalle=V      Gampaha=W       Dehiwala=X       Moratuwa=Y\n");
@@ -72,6 +99,13 @@ int main()
     printf("2.Distance Management\n\n");
     distanceManagement(city,distance);
     printf("\n\n");
+
+    printf("3.Vehicle Management\n\n");
+    printf("Van=1,Truck=2,Lorry=3\n\n");
+    printf("   Type   kg      LKR   km/h   km/l\n");
+    vehicleManagement(vehicle);
+
+
 
 
     return 0;
