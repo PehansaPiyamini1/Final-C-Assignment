@@ -136,6 +136,10 @@ void calculation(int S,int E,float F,int distance[NUMBER_OF_CITIES][NUMBER_OF_CI
     time = D/S;
     printf("b.Time            = %d hours\n\n",time);
 
+    E = vehicle[h][4];
+    printf("*Efficiency       = %d (km/l)\n",E);
+
+
 
 
 }
